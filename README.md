@@ -13,12 +13,11 @@ Kode ini adalah komponen React yang bertujuan untuk mendapatkan input gejala dar
 - 📊 Hasil diagnosa akan ditampilkan di bawah form dengan kondisi dan jumlah gejala yang cocok.
 
 ### Colaborator
-- M. Ilhaam Ghiffari (2108107010005)
-- Ardian
-- Rahmat Azrima
-- Nabila Aprilia
-- Mahathir
-
+- Andika Pebriansyah
+- Cut Sula Fhatia Rahmah
+- Tiara Agustin
+- Nisa Rianti
+- Riska Haqika Situmorang
 
 
 
