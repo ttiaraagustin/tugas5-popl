@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import {
   RuleBasedResults,
   SYMPTOM_CONDITION_RULES,
@@ -36,7 +36,7 @@ const Diagnosis: React.FC = () => {
     // Menggabungkan hasil diagnosa dan gejala yang dipilih
     const resultWithSymptoms = {
       computedResults,
-      selectedSymptoms: answers
+      selectedSymptoms: answers,
     };
 
     // Mengirim hasil ke halaman hasil
@@ -69,12 +69,14 @@ const Diagnosis: React.FC = () => {
                 </label>
               </div>
             ))}
-            <button
-              type="submit"
-              className="mt-4 px-4 py-2 bg-gradient-to-r from-emerald-500 to-teal-900 text-white rounded hover:from-emerald-500 hover:to-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
-            >
-              Diagnosa
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="mt-4 px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full hover:from-emerald-500 hover:to-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
+              >
+                Diagnosa
+              </button>
+            </div>
           </form>
         </div>
       </div>
