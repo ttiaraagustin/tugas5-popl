@@ -31,13 +31,13 @@ const SUGGESTIONS: Record<string, string> = {
     "Jaga rutinitas harian Anda, termasuk pola tidur dan makan yang teratur. Hindari pemicu stres yang ekstrem, dan buatlah catatan suasana hati untuk membantu mengidentifikasi perubahan. Terapi obat-obatan dan konseling psikologis dapat membantu menjaga keseimbangan suasana hati.",
   Skizofrenia:
     "Terapi psikososial dan perawatan medis yang tepat dapat membantu mengelola gejala skizofrenia. Penting untuk mendukung kesehatan mental Anda dengan menjaga rutinitas, dukungan dari keluarga, dan pengawasan medis yang berkelanjutan.",
-  PTSD:
+  "PTSD (Post-Traumatic Stress Disorder)":
     "Menghindari pemicu trauma tidak selalu efektif. Pertimbangkan untuk menjalani terapi pemrosesan kognitif atau terapi eksposur, yang dirancang untuk mengurangi gejala PTSD. Latihan mindfulness juga dapat membantu dalam mengatasi gejala PTSD sehari-hari.",
   "Gangguan Kepribadian Borderline":
     "Mengelola perubahan suasana hati bisa dilakukan dengan mindfulness atau terapi dialektik perilaku (DBT). Dukungan sosial dan terapi reguler dengan psikolog atau psikiater dapat sangat membantu mengurangi perilaku impulsif dan menstabilkan hubungan interpersonal.",
-  "Gangguan Pemakanan":
+  "Eating disorder":
     "Konsultasi dengan ahli gizi serta terapi perilaku kognitif bisa membantu dalam memperbaiki hubungan Anda dengan makanan. Penting untuk menjaga kesehatan fisik dengan makan secara seimbang dan mendiskusikan kekhawatiran Anda dengan profesional kesehatan.",
-    "ADHD (Attention-Deficit/Hyperactivity Disorder)":
+  "ADHD (Attention-Deficit/Hyperactivity Disorder)":
     "Cobalah menggunakan teknik manajemen waktu, daftar tugas, dan catatan untuk mengatasi gejala ADHD. Terapi perilaku juga bisa membantu dalam mengatasi masalah perhatian. Jika perlu, konsultasikan dengan dokter untuk opsi pengobatan yang tersedia.",
 };
 

@@ -11,7 +11,9 @@
       "Detak jantung cepat",
       "Sering Gemeteran atau menggigil",
       "Merasa gelisah atau tegang",
-      "Kesulitan untuk berkonsentrasi"
+      "Serangan panik",
+      "Kesulitan untuk berkonsentrasi",
+      "Menghindari kontak sosial"
     ],
     "OCD": [
       "Pikiran atau dorongan berulang yang tidak diinginkan",
@@ -32,7 +34,7 @@
       "Delusi (keyakinan kuat yang tidak didasarkan pada kenyataan)",
       "Pikiran atau ucapan yang tidak terorganisir",
       "Gejala negatif (emosi atau motivasi yang berkurang)",
-      "Kemampuan kognitif yang terganggu (memori, perhatian)"
+      "Kemampuan kognitif yang terganggu (memori dan penalaran)"
     ],
     "PTSD (Post-Traumatic Stress Disorder)": [
       "Mengalami kilas balik atau mimpi buruk tentang trauma",
@@ -48,7 +50,7 @@
       "Tindakan impulsif dan berisiko",
       "Perasaan kosong atau seolah-olah Anda tidak ada"
     ],
-    "Gangguan Pemakanan": [
+    "Eating disorder": [
       "Ketakutan berlebihan akan kenaikan berat badan",
       "Menghindari makan di depan umum",
       "Perubahan drastis dalam berat badan",
@@ -60,7 +62,9 @@
       "Sering lupa dengan tugas sehari-hari",
       "Sering berbicara berlebihan",
       "Sulit untuk duduk diam",
-      "Sering menginterupsi atau menyela orang lain"
+      "Sering menginterupsi atau menyela orang lain",
+      "Suka menyentuh dan bermain dengan segala sesuatu (sangat aktif)"
+
     ]
   }
 
