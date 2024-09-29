@@ -5,8 +5,8 @@ import { Red_Rose } from 'next/font/google'
 const inter = Red_Rose({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Sadar Jiwa',
-  description: 'Cek Kesehatan mu',
+  title: 'MindInsight',
+  description: 'Cek Kesehatan mentalmu',
 }
 
 export default function RootLayout({
