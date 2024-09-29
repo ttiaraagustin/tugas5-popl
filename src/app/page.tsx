@@ -33,8 +33,14 @@ const Diagnosis: React.FC = () => {
     setResults(computedResults);
     setSelectedSymptoms(answers); // Simpan gejala yang dipilih ke state
 
+    // Menggabungkan hasil diagnosa dan gejala yang dipilih
+    const resultWithSymptoms = {
+      computedResults,
+      selectedSymptoms: answers
+    };
+
     // Mengirim hasil ke halaman hasil
-    const resultsQuery = JSON.stringify(computedResults);
+    const resultsQuery = JSON.stringify(resultWithSymptoms);
     router.push(`/result?results=${encodeURIComponent(resultsQuery)}`);
   };
 
