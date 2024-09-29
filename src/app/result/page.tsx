@@ -105,7 +105,7 @@ const Result = () => {
                 ))}
 
               <h2 className="text-xl font-bold mb-4 mt-6">
-                Berdasarkan gejala Anda, terlihat bahwa Anda mengalami lebih banyak gejala dari kondisi berikut, ada kemungkinan Anda mengalami masalah mental tersebut atau juga tidak. Kami menyarankan untuk berkonsultasi pada psikiater terdekat untuk mengatasi permasalahan Anda. Adapun, saran yang kami dapat berikan untuk sedikit mengurangi masalah Anda adalah:
+                Berdasarkan gejala Anda, terlihat bahwa Anda mengalami lebih banyak gejala dari kondisi berikut, ada kemungkinan Anda mengalami masalah mental tersebut atau juga tidak. Kami menyarankan untuk melakukan konsultasi dengan psikiater terdekat untuk mengatasi permasalahan Anda. Adapun, saran yang kami dapat berikan untuk sedikit mengurangi masalah Anda adalah:
               </h2>
               {topConditions.map((condition) => {
                 // Normalisasi nama kondisi

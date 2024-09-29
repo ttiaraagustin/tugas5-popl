@@ -10,15 +10,12 @@ Kode ini adalah komponen React yang bertujuan untuk mendapatkan input gejala dar
 
 - 🖱️ Setelah memilih gejala, pengguna dapat mengeklik tombol "Diagnosa" untuk mendapatkan hasil diagnosa berdasarkan gejala yang dipilih.
 
-- 📊 Hasil diagnosa akan ditampilkan di bawah form dengan kondisi dan jumlah gejala yang cocok.
-
 ### Colaborator
 - Andika Pebriansyah
 - Cut Sula Fhatia Rahmah
 - Tiara Agustin
 - Nisa Rianti
 - Riska Haqika Situmorang
-
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -52,9 +49,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://ai-kelompok2.vercel.app/
 
 
 
