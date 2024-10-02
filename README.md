@@ -12,7 +12,7 @@ Kode ini adalah komponen React yang bertujuan untuk mendapatkan input gejala dar
 
 ### Colaborator
 - Andika Pebriansyah
-- Cut Sula Fhatia Rahmah
+- Cut Sula Fhatia Rahma
 - Tiara Agustin
 - Nisa Rianti
 - Riska Haqika Situmorang
