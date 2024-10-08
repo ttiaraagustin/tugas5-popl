@@ -1,25 +1,25 @@
 "use client";
 import { useSearchParams } from 'next/navigation';
 import React from 'react';
-import { SYMPTOM_CONDITION_RULES } from '../../lib/rules/evaluate'; // Pastikan ini diimpor
+import { SYMPTOM_CONDITION_RULES } from '../../lib/rules/evaluate'; // Pastikan ini diimpor dengan benar
 
 /**
- * Hasil Diagnosa Component.
+ * Komponen Hasil Diagnosa.
  * 
- * @returns {React.Element} The rendered Result component.
+ * @returns {React.Element} Komponen yang merender hasil diagnosa.
  */
 
 // Definisikan tipe data untuk hasil diagnosa
 interface DiagnosisResult {
-  [condition: string]: number; // Contoh: { "Depresi": 3, "Kecemasan": 1 }
+  [condition: string]: number; // Misal: { "Depresi": 3, "Kecemasan": 1 }
 }
 
 interface ResultWithSymptoms {
-  computedResults: DiagnosisResult;
-  selectedSymptoms: string[];
+  computedResults: DiagnosisResult; // Hasil diagnosa yang dihitung
+  selectedSymptoms: string[]; // Gejala yang dipilih pengguna
 }
 
-// Tentukan tipe untuk SUGGESTIONS
+// Tentukan tipe untuk SUGGESTIONS (saran berdasarkan kondisi mental)
 const SUGGESTIONS: Record<string, string> = {
   Depresi:
     "Cobalah untuk menjaga pola tidur yang teratur, melakukan aktivitas fisik secara rutin, dan berbagi perasaan Anda dengan orang yang Anda percayai. Terapi kognitif perilaku (CBT) serta konsultasi dengan psikolog atau psikiater sangat dianjurkan.",
@@ -41,28 +41,42 @@ const SUGGESTIONS: Record<string, string> = {
     "Cobalah menggunakan teknik manajemen waktu, daftar tugas, dan catatan untuk mengatasi gejala ADHD. Terapi perilaku juga bisa membantu dalam mengatasi masalah perhatian. Jika perlu, konsultasikan dengan dokter untuk opsi pengobatan yang tersedia.",
 };
 
+// Definisikan warna untuk setiap kondisi
+const conditionColors: Record<string, string> = {
+  Depresi: "text-red-500",
+  Kecemasan: "text-blue-500",
+  OCD: "text-green-500",
+  "Gangguan Bipolar": "text-purple-500",
+  Skizofrenia: "text-indigo-500",
+  PTSD: "text-yellow-500",
+  "Gangguan Kepribadian Borderline": "text-pink-500",
+  "Eating disorder": "text-orange-500",
+  ADHD: "text-teal-500",
+};
+
+// Fungsi komponen utama untuk menampilkan hasil diagnosa
 const Result = () => {
-  const searchParams = useSearchParams();
-  const results = searchParams.get('results');
+  const searchParams = useSearchParams(); // Mengambil parameter dari URL
+  const results = searchParams.get('results'); // Mengambil hasil diagnosa dari query params
 
   // Jika tidak ada hasil, tampilkan pesan error
   if (!results) {
     return <div>Hasil diagnosa tidak ditemukan.</div>;
   }
 
-  // Parsing hasil menjadi ResultWithSymptoms
+  // Parsing hasil diagnosa menjadi format ResultWithSymptoms
   let parsedResults: ResultWithSymptoms;
 
   try {
-    parsedResults = JSON.parse(results);
+    parsedResults = JSON.parse(results); // Parsing hasil diagnosa dari JSON
     console.log('Parsed results:', parsedResults); // Debug log
   } catch (error) {
-    return <div>Format hasil diagnosa tidak valid.</div>; // Tangani kesalahan saat parsing JSON
+    return <div>Format hasil diagnosa tidak valid.</div>; // Tangani kesalahan parsing
   }
 
-  const { computedResults, selectedSymptoms } = parsedResults;
+  const { computedResults, selectedSymptoms } = parsedResults; // Destruktur hasil diagnosa
 
-  // Cari jumlah gejala tertinggi
+  // Mencari jumlah gejala tertinggi
   const maxSymptomCount = Math.max(...Object.values(computedResults));
 
   // Filter kondisi yang memiliki jumlah gejala sama dengan jumlah tertinggi
@@ -83,11 +97,12 @@ const Result = () => {
             <div className="mt-8 border border-white p-4 rounded-lg">
               <h2 className="text-xl font-bold mb-4">Hasil Diagnosa Anda:</h2>
               {Object.entries(computedResults)
-                .filter(([_, value]) => value > 0) // Pastikan hanya kondisi dengan gejala yang valid ditampilkan
-                .sort(([, a], [, b]) => b - a)
+                .filter(([_, value]) => value > 0) // Tampilkan hanya kondisi dengan gejala yang valid
+                .sort(([, a], [, b]) => b - a) // Urutkan dari gejala terbanyak
                 .map(([condition, symptomCount]) => (
                   <div key={condition} className="mb-4">
-                    <span className="font-medium">
+                    {/* Tampilkan kondisi dan jumlah gejala */}
+                    <span className={`font-medium ${conditionColors[condition] || 'text-white'}`}>
                       {condition} ({symptomCount} gejala)
                     </span>
                     <ul className="ml-4 mt-2 list-disc">
@@ -105,21 +120,20 @@ const Result = () => {
                 ))}
 
               <h2 className="text-xl font-bold mb-4 mt-6">
-                Berdasarkan gejala Anda, terlihat bahwa Anda mengalami lebih banyak gejala dari kondisi berikut, ada kemungkinan Anda mengalami masalah mental tersebut atau juga tidak. Kami menyarankan untuk melakukan konsultasi dengan psikiater terdekat untuk mengatasi permasalahan Anda. Adapun, saran yang kami dapat berikan untuk sedikit mengurangi masalah Anda adalah:
+                Berdasarkan gejala Anda, ada kemungkinan Anda mengalami masalah mental berikut. Kami menyarankan konsultasi dengan psikiater terdekat. Saran berikut dapat membantu Anda mengatasi beberapa masalah:
               </h2>
               {topConditions.map((condition) => {
-                // Normalisasi nama kondisi
-                const normalizedCondition = condition.trim();
+                const normalizedCondition = condition.trim(); // Normalisasi nama kondisi
                 console.log('Checking suggestion for:', normalizedCondition); // Debug log
 
-                // Cek apakah kondisi ada dalam SUGGESTIONS
+                // Ambil saran dari SUGGESTIONS berdasarkan kondisi
                 const suggestion = SUGGESTIONS[normalizedCondition];
 
                 console.log('Suggestion found:', suggestion); // Debug log
 
                 return (
                   <div key={condition} className="mb-4">
-                    <span className="font-medium">
+                    <span className={`font-medium ${conditionColors[condition] || 'text-white'}`}>
                       {normalizedCondition}:
                     </span>
                     <div className="mt-2">
