@@ -1,21 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  SYMPTOM_CONDITION_RULES,
-  evaluateRules,
-} from "../lib/rules/evaluate";
+import { SYMPTOM_CONDITION_RULES, evaluateRules } from "../lib/rules/evaluate";
 import FloatingSVGs from "./component/FloatingSVG";
 
-/**
- * Diagnosis Component.
- *
- * @returns {React.Element} The rendered Diagnosis component.
- */
 const Diagnosis: React.FC = () => {
   const router = useRouter();
-  const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]); // Menyimpan gejala yang dipilih
-  const [page, setPage] = useState(0); // Melacak halaman saat ini
+  const [selectedSymptoms, setSelectedSymptoms] = useState<string[]>([]);
+  const [page, setPage] = useState(0);
   const symptoms = Object.values(SYMPTOM_CONDITION_RULES).flat();
 
   const symptomsPerPage = 10;
@@ -25,7 +17,6 @@ const Diagnosis: React.FC = () => {
     (page + 1) * symptomsPerPage
   );
 
-  // Menghandle perubahan checkbox
   const handleCheckboxChange = (symptom: string) => {
     if (selectedSymptoms.includes(symptom)) {
       setSelectedSymptoms((prev) => prev.filter((s) => s !== symptom));
@@ -34,9 +25,8 @@ const Diagnosis: React.FC = () => {
     }
   };
 
-  // Menghandle submit form diagnosa
   const handleSubmit = () => {
-    // Hanya proses hasil jika tombol Diagnosa ditekan
+    console.log('Diagnosa button clicked'); // Debugging log
     if (selectedSymptoms.length > 0) {
       const computedResults = evaluateRules(selectedSymptoms);
       const resultWithSymptoms = {
@@ -46,9 +36,8 @@ const Diagnosis: React.FC = () => {
 
       const resultsQuery = JSON.stringify(resultWithSymptoms);
       router.push(`/result?results=${encodeURIComponent(resultsQuery)}`);
-
     } else {
-      alert("Silakan pilih gejala terlebih dahulu."); // Meminta pengguna memilih gejala jika tidak ada yang dipilih
+      alert("Silakan pilih gejala terlebih dahulu.");
     }
   };
 
@@ -80,7 +69,6 @@ const Diagnosis: React.FC = () => {
               </div>
             ))}
           </form>
-          {/* Mengatur tombol navigasi */}
           <div className="mt-4 flex flex-col items-center">
             <div className="flex justify-between w-full">
               {page > 0 && (
@@ -94,18 +82,17 @@ const Diagnosis: React.FC = () => {
               {page < totalPages - 1 && (
                 <button
                   onClick={() => setPage(page + 1)}
-                  className="mt-4 px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full hover:from-emerald-500 hover:to-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
+                  className="mt-4 px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-full hover:from-emerald-500 hover:to-teal-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 ml-auto"
                 >
                   Selanjutnya
                 </button>
               )}
             </div>
-            {/* Tombol Diagnosa hanya muncul di halaman terakhir */}
             {page === totalPages - 1 && (
               <button
-                type="button" // Menggunakan type button untuk menghindari perilaku submit form
+                type="button"
                 className="mt-4 px-4 py-2 bg-gradient-to-r from-white to-gray-200 text-black rounded-full hover:from-gray-50 hover:to-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-                onClick={handleSubmit} // Memastikan tombol berfungsi
+                onClick={handleSubmit}
               >
                 Diagnosa
               </button>
