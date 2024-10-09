@@ -49,7 +49,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 berikut adalah link web
-[https://ai-kelompok2.vercel.app/](https://mindinsight.vercel.app/)
+[MindSight](https://mindinsight.vercel.app/)
 
 
 
