@@ -9,7 +9,7 @@ Kode ini adalah komponen React yang bertujuan untuk mendapatkan input gejala dar
 - ✅ Pengguna dapat memilih satu atau lebih gejala yang mereka alami dengan mencentang kotak di samping setiap gejala.
 
 - 🖱️ Setelah memilih gejala, pengguna dapat mengeklik tombol "Diagnosa" untuk mendapatkan hasil diagnosa berdasarkan gejala yang dipilih
-     dan saran menampilkan saran umum dari gejala yang dipilih.
+        dan menampilkan saran umum dari gejala yang dipilih.
 
 ### Colaborator
 - Andika Pebriansyah
