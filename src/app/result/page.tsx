@@ -47,8 +47,8 @@ const conditionColors: Record<string, string> = {
   Kecemasan: "text-blue-500",
   OCD: "text-green-500",
   "Gangguan Bipolar": "text-purple-500",
-  Skizofrenia: "text-indigo-500",
-  PTSD: "text-yellow-500",
+  Skizofrenia: "text-yellow-500",
+  PTSD: "text-grey-500",
   "Gangguan Kepribadian Borderline": "text-pink-500",
   "Eating disorder": "text-orange-500",
   ADHD: "text-teal-500",
@@ -102,7 +102,7 @@ const Result = () => {
                 .map(([condition, symptomCount]) => (
                   <div key={condition} className="mb-4">
                     {/* Tampilkan kondisi dan jumlah gejala */}
-                    <span className={`font-medium ${conditionColors[condition] || 'text-white'}`}>
+                    <span className={`font-medium ${conditionColors[condition] || 'text-cyan-500'}`}>
                       {condition} ({symptomCount} gejala)
                     </span>
                     <ul className="ml-4 mt-2 list-disc">
